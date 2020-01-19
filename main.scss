@@ -4,20 +4,28 @@ body{
 
 .photo-container{
     display: flex;
+    height: 100vh;
 
     &:hover{
         .photo:not(:hover){
             filter: saturate(0);
         }
     }
+
+    @media(max-width:800px){
+        flex-direction: column;
+    }
 }
 
 h2{
     color: cornsilk;
-    position: relative;
+    position: absolute;
     font-size: 60px;
-    transform: translate(500px, 0);
+    transform: translate(40%, 50%);
     transition: .4s;
+    z-index: 20;
+    
+    width: 360px;
     
 
     &::before{
@@ -37,15 +45,24 @@ h2{
     transition: flex-basis .6s, filter 1.2s;
     filter: saturate(.5);
     position: relative;
+    width: 100%;
+
+    @media(max-width:800px){
+        background-position: center;
+    }
 
 
     &:hover{
         flex-basis: 150%;
         filter: saturate(1.5);
 
+      
+
         h2{
-            transform: translate(500px, -550px);
-           
+            transform: translate(40%, -750%);
+            margin: auto;
+
+        
 
             &::before{
             border-top: 1px solid cornsilk;
