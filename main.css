@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  height: 100vh;
 }
 
 .photo-container {
@@ -15,22 +16,41 @@ body {
   }
 }
 
+.photo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo:nth-child(1) {
+  background-image: url(imgs/viole1.JPG);
+  background-size: cover;
+}
+.photo:nth-child(2) {
+  background-image: url(imgs/viole2.JPG);
+  background-size: cover;
+}
+.photo:nth-child(3) {
+  background-image: url(imgs/viole3.JPG);
+  background-size: cover;
+}
+.photo:nth-child(4) {
+  background-image: url(imgs/viole4.JPG);
+  background-size: cover;
+}
+
 h2 {
   color: cornsilk;
-  position: absolute;
   font-size: 60px;
-  transform: translate(40%, 50%);
-  transition: .4s;
-  z-index: 20;
-  width: 360px;
+  transform: translateY(800%);
+  transition: .4s .3s;
 }
 h2::before {
   content: "";
-  position: absolute;
   font-size: 60px;
   width: 350px;
   height: 70px;
-  transition: .5s .2s;
+  transition: .5s .4s;
   transform: scale(0);
 }
 
@@ -40,26 +60,25 @@ h2::before {
   transition: flex-basis .6s, filter 1.2s;
   filter: saturate(0.5);
   position: relative;
-  width: 100%;
-}
-@media (max-width: 800px) {
-  .photo {
-    background-position: center;
-  }
 }
 .photo:hover {
   flex-basis: 150%;
   filter: saturate(1.5);
 }
+@media (max-width: 800px) {
+  .photo:hover {
+    flex-basis: 75%;
+  }
+}
 .photo:hover h2 {
-  transform: translate(40%, -750%);
-  margin: auto;
+  transform: translateY(0);
 }
 .photo:hover h2::before {
-  border-top: 1px solid cornsilk;
-  border-bottom: 1px solid cornsilk;
+  border-top: 1.6px solid cornsilk;
+  border-bottom: 1.6px solid cornsilk;
   display: block;
   transform: scale(1);
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */
