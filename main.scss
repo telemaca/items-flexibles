@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+
+.photo-container{
+    display: flex;
+
+    &:hover{
+        .photo:not(:hover){
+            filter: saturate(0);
+        }
+    }
+}
+
+h2{
+    color: cornsilk;
+    position: relative;
+    font-size: 60px;
+    transform: translate(500px, 0);
+    transition: .4s;
+    
+
+    &::before{
+        content: "";
+        position: absolute;
+        font-size: 60px;
+        width: 350px;
+        height: 70px;
+        transition: .5s .2s;
+        transform: scale(0);
+    }
+}
+
+.photo{
+    overflow: hidden;
+    flex-basis: 25%;
+    transition: flex-basis .6s, filter 1.2s;
+    filter: saturate(.5);
+    position: relative;
+
+
+    &:hover{
+        flex-basis: 150%;
+        filter: saturate(1.5);
+
+        h2{
+            transform: translate(500px, -550px);
+           
+
+            &::before{
+            border-top: 1px solid cornsilk;
+            border-bottom: 1px solid cornsilk;
+            display: block;
+            transform: scale(1);
+            }
+        }
+    }
+
+}
